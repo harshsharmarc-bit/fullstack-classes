@@ -1,0 +1,378 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --ink: #0d121e;
+    --text: #374151;
+    --muted: #6b7280;
+    --accent: #b3122a;
+    --accent-dark: #8f0d20;
+    --bg: #f3f4f6;
+    --white: #ffffff;
+    --line: #e5e7eb;
+    --shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Georgia, "Times New Roman", serif;
+    line-height: 1.6;
+    color: var(--ink);
+    background: var(--bg);
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+a {
+    color: inherit;
+}
+
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container {
+    width: min(1200px, 92%);
+    margin: auto;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.site-header {
+    background: var(--white);
+    text-align: center;
+    padding: 28px 0;
+    border-bottom: 1px solid var(--line);
+}
+
+.site-header h1 {
+    font-size: clamp(2.2rem, 5vw, 3.5rem);
+    letter-spacing: -1px;
+    color: var(--accent);
+}
+
+.site-header p {
+    margin-top: 4px;
+    color: var(--muted);
+    font-size: 0.95rem;
+    font-style: italic;
+}
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--ink);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.navbar a {
+    display: block;
+    padding: 14px 20px;
+    color: var(--white);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.95rem;
+    transition: 0.25s ease;
+}
+
+.navbar a:hover {
+    background: var(--accent);
+}
+
+
+/* =========================
+   MAIN LAYOUT
+========================= */
+
+.layout {
+    display: grid;
+    grid-template-columns: minmax(0, 2.5fr) minmax(260px, 1fr);
+    gap: 30px;
+    padding-top: 30px;
+    padding-bottom: 40px;
+}
+
+
+/* =========================
+   BREAKING NEWS
+========================= */
+
+.breaking {
+    background: var(--white);
+    border-left: 6px solid var(--accent);
+    padding: 15px 18px;
+    margin-bottom: 30px;
+    font-weight: bold;
+    box-shadow: var(--shadow);
+}
+
+.breaking span {
+    color: var(--accent);
+    margin-right: 8px;
+}
+
+
+/* =========================
+   SECTIONS
+========================= */
+
+section {
+    margin-bottom: 38px;
+    scroll-margin-top: 80px;
+}
+
+.section-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1.7rem;
+    margin-bottom: 15px;
+    padding-bottom: 8px;
+    border-bottom: 3px solid var(--accent);
+}
+
+
+/* =========================
+   NEWS CARDS
+========================= */
+
+.news-card {
+    display: grid;
+    grid-template-columns: 38% 1fr;
+    background: var(--white);
+    border: 1px solid var(--line);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.news-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+.news-card figure {
+    height: 100%;
+}
+
+.news-card figure img {
+    height: 100%;
+    min-height: 240px;
+    object-fit: cover;
+}
+
+.news-card figcaption {
+    background: rgba(0, 0, 0, 0.75);
+    color: white;
+    padding: 5px 10px;
+    font-size: 0.8rem;
+    position: relative;
+    margin-top: -34px;
+}
+
+.content {
+    padding: 24px;
+}
+
+.category {
+    color: var(--accent);
+    font-size: 0.75rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.content h3 {
+    font-size: 1.5rem;
+    margin: 7px 0 10px;
+}
+
+.content p {
+    color: var(--text);
+    font-size: 0.98rem;
+}
+
+.read-more {
+    display: inline-block;
+    margin-top: 15px;
+    color: var(--accent);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.read-more:hover {
+    color: var(--accent-dark);
+    text-decoration: underline;
+}
+
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.sidebar-card {
+    background: var(--white);
+    padding: 20px;
+    border: 1px solid var(--line);
+    box-shadow: var(--shadow);
+}
+
+.sidebar-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--accent);
+}
+
+.sidebar-card img {
+    max-height: 220px;
+    object-fit: cover;
+    margin-bottom: 12px;
+}
+
+.sidebar-card p {
+    color: var(--text);
+}
+
+.side-list {
+    list-style: none;
+}
+
+.side-list li {
+    padding: 12px 0;
+    border-bottom: 1px solid var(--line);
+}
+
+.side-list li:last-child {
+    border-bottom: none;
+}
+
+.side-list a {
+    text-decoration: none;
+    color: var(--text);
+    font-weight: bold;
+}
+
+.side-list a:hover {
+    color: var(--accent);
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    background: var(--ink);
+    color: white;
+    text-align: center;
+    padding: 25px 0;
+}
+
+footer p:first-child {
+    font-weight: bold;
+}
+
+footer p:last-child {
+    color: #9ca3af;
+    font-size: 0.85rem;
+    margin-top: 4px;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 850px) {
+
+    .layout {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .sidebar-card:first-child {
+        grid-column: 1 / -1;
+    }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .container {
+        width: 94%;
+    }
+
+    .navbar a {
+        padding: 10px 12px;
+        font-size: 0.85rem;
+    }
+
+    .layout {
+        padding-top: 20px;
+    }
+
+    .news-card {
+        grid-template-columns: 1fr;
+    }
+
+    .news-card figure img {
+        min-height: 200px;
+        max-height: 260px;
+    }
+
+    .content {
+        padding: 18px;
+    }
+
+    .content h3 {
+        font-size: 1.3rem;
+    }
+
+    .sidebar {
+        display: flex;
+    }
+
+    .section-title {
+        font-size: 1.4rem;
+    }
+}
